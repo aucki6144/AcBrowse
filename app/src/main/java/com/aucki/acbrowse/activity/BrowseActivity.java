@@ -172,7 +172,7 @@ public class BrowseActivity extends AppCompatActivity {
                                 for (Fragment fragment : getSupportFragmentManager().getFragments()) {
                                     getSupportFragmentManager().beginTransaction().remove(fragment).commit();
                                 }
-                                loadFragment("https://github.com/aucki6144/AcBrowser");
+                                loadFragment("https://github.com/aucki6144/AcBrowse");
 //                                Log.d("debug_nav", "Github chosen: ");
                                 break;
                             }
