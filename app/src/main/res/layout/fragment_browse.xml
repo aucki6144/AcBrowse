@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_standard">
+
+
+<!--    normal bar-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/browse_bar_normal"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="5dp"
+                app:cardBackgroundColor="@color/foreground_standard"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/button_favor"
+                        android:layout_width="20pt"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_star"
+                        >
+                    </ImageButton>
+
+                    <Button
+                        android:id="@+id/button_show_url"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/white">
+                    </Button>
+
+                    <ImageButton
+                        android:id="@+id/button_side_refresh"
+                        android:layout_width="20pt"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_refresh">
+                    </ImageButton>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <ImageButton
+                android:id="@+id/button_go_back"
+                android:layout_width="0pt"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginVertical="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/button_go_forward"
+                android:layout_width="0pt"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginVertical="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_forward">
+            </ImageButton>
+
+
+
+        </LinearLayout>
+
+        <!--    type bar-->
+
+
+        <LinearLayout
+            android:id="@+id/browse_bar_type"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="5dp"
+                app:cardBackgroundColor="@color/foreground_standard"
+                app:cardCornerRadius="10dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/edit_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginHorizontal="8dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="#B8B4B4"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:imeOptions="actionGo"
+                        android:hint="Enter a url">
+                    </EditText>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="8dp"
+                android:textColor="@color/white"
+                android:text="cancel">
+            </Button>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_browse"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+
+    </LinearLayout>
+
+<!--    <androidx.drawerlayout.widget.DrawerLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1">-->
+
+<!--        <WebView-->
+<!--            android:id="@+id/web_view_browse"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#aaaaaa">-->
+<!--        </WebView>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/draw_layout_favor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:orientation="vertical"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:background="@color/foreground_standard"-->
+<!--            >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="Url">-->
+<!--                </TextView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/text_view_favor_url"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="4"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/white">-->
+<!--                </TextView>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginHorizontal="20dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="Title">-->
+<!--                </TextView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/text_view_favor_title"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="4"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textColor="@color/white">-->
+<!--                </TextView>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="end"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/button_cancel_favor"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/cancel"-->
+<!--                        android:textColor="@color/white">-->
+<!--                    </Button>-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/button_confirm_favor_bookmark"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:text="Add Bookmark">-->
+<!--                    </Button>-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/button_confirm_favor"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:text="Favor">-->
+<!--                    </Button>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </FrameLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.drawerlayout.widget.DrawerLayout>-->
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/web_view_browse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#aaaaaa">
+        </WebView>
+
+        <LinearLayout
+            android:id="@+id/draw_layout_favor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:background="@color/foreground_standard"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="Url">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/text_view_favor_url"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:singleLine="true"
+                    android:textColor="@color/white">
+                </TextView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="Title">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/text_view_favor_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:singleLine="true"
+                    android:textColor="@color/white">
+                </TextView>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button_cancel_favor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cancel"
+                        android:textColor="@color/white">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/button_confirm_favor_bookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="Add Bookmark">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/button_confirm_favor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="Favor">
+                    </Button>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

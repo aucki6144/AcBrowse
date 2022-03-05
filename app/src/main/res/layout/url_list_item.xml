@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    app:cardCornerRadius="2dp"
+    app:cardBackgroundColor="#4E4E4E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:textSize="18sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/item_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="General"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="15dp">
+            </TextView>
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/delete_url_item"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="15dp"-->
+<!--                android:src="@drawable/ic_star"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:layout_gravity="end">-->
+<!--            </ImageButton>-->
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/item_tv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="test">-->
+<!--    </TextView>-->
+
+</androidx.cardview.widget.CardView>
+
+
+
